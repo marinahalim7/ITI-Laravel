@@ -12,10 +12,7 @@ class UserController extends Controller
      */
     public function index()
     {
-       //  $users=User::all();
-        $users = User::latest()->paginate(5);
-
-        return view('users.index',["users"=>$users]);
+        //
     }
 
     /**
@@ -39,7 +36,6 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show',["user"=>$user]);
         //
     }
 
@@ -64,6 +60,20 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+       
+       
         //
     }
+    public function getAllArticles(User $user)
+    {
+       // dd($user);
+        $articles = $user->articles;
+       // dd($articles);
+        return view('users.articles',["articles"=>$articles]);
+       
+       
+        //
+    }
+
+
 }
