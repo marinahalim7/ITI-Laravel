@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\API\PostController as PostAPIControlller;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +16,3 @@ use app\Http\Controllers\API\PostController as PostAPIControlller;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('/posts', PostController::class);
-Route::resource('/users', UserController::class);
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
